@@ -1,0 +1,47 @@
+﻿@page
+@model IngesDom0.Pages.Users.DeleteModel
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h1>Suppression</h1>
+
+<h3>Etês-vous sûr de vouloir supprimer ce utilisateur?</h3>
+<div>
+    <h4>Utilisateur</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            
+            Nom
+        </dt>
+        <dd class="col-sm-10">
+           @Html.DisplayFor(model => model.User.Name)
+        </dd>
+            <dt class="col-sm-2">
+               Prénom
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.User.FirstName)
+            </dd>
+            <dt class="col-sm-2">
+                Email
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.User.Email)
+            </dd>
+            <dt class="col-sm-2">
+                Sexe
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.User.Sexe)
+            </dd>
+        </dl>
+
+        <form method="post">
+            <input type="hidden" asp-for="User.UserID" />
+            <input type="submit" value="Supprimer" class="btn btn-outline-danger btn-lg" /> |
+            <a asp-page="./Index" class="btn btn-outline-secondary btn-lg " role="button">Retour à la liste</a>
+        </form>
+    </div>
