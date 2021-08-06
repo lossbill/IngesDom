@@ -19,10 +19,10 @@ namespace IngesDom0.Pages.Users
             _context = context;
         }
 
-        public IActionResult OnGet()
-        {
-            return Page();
-        }
+        //public IActionResult OnGet()
+        //{
+        //    return Page();
+        //}
 
         [BindProperty]
         public User User { get; set; }
@@ -34,6 +34,7 @@ namespace IngesDom0.Pages.Users
             {
                 return Page();
             }
+
 
             _context.User.Add(User);
             await _context.SaveChangesAsync();
